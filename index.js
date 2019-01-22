@@ -19,7 +19,7 @@ var api = new ParseServer({
   //**** Security Settings ****//
   // allowClientClassCreation: process.env.CLIENT_CLASS_CREATION || false,
   appId: 'parse-ltt-app-ID',
-  masterKey: process.env.MASTER_KEY
+  masterKey: 'parse-ltt-master-KEY'
 });
 
 var app = express();
