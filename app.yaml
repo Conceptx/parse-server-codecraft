@@ -4,8 +4,8 @@ vm: true
 env_variables:
   # --REQUIRED--
   DATABASE_URI: mongodb://letthemtrust:lttadmin19@ds159574.mlab.com:59574/ltt
-  APP_ID: 3c\x07)\xc3rB\xd19\xee\x1djR\x1c:\x01\xdbY\x0b\x06
-  MASTER_KEY: a\xc7L\x98\xed\xb9\x7f\xdf\x93\x01\xc1\x826\x9b\x0c\xb8-O\xcd\xd0
+  APP_ID: parse-ltt-app-ID
+  MASTER_KEY: parse-ltt-master-KEY
   # --OPTIONAL--
   # FILE_KEY: <your-file-key>
   # PARSE_MOUNT: /parse

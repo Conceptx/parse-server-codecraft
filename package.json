@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jawache/parse-server-example"
+    "url": "https://github.com/Conceptx/parse-server-codecraft"
   },
   "license": "MIT",
   "dependencies": {
