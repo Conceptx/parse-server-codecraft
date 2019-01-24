@@ -7,7 +7,7 @@ router.post('/', (req, res) => {
   request
     .post('parse/classes/donations')
     .set('Content-Type', 'application/json')
-    .set('X-Parse-Application-Id', 'parse-ltt-app-ID')
+    .set('X-Parse-Application-Id', `${process.env.APP_ID}`)
     .type('json')
     .send(req.body)
     .then(async response => {
