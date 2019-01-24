@@ -1,10 +1,11 @@
 const express = require('express');
 const ParseServer = require('parse-server').ParseServer;
 const path = require('path');
+const bodyParser = require('body-parser');
 const donate = require('./donate');
 const login = require('./login');
 const message = require('./message');
-const bodyParser = require('body-parser');
+const calendar = require('./calendar');
 
 const api = new ParseServer({
   databaseURI:
@@ -34,6 +35,7 @@ app.use(mountPath, api);
 app.use('/completeDonation', donate);
 app.use('/completeLogin', login);
 app.use('/sendMessage', message);
+app.use('/events', calendar);
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'));
