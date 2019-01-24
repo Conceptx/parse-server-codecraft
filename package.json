@@ -19,5 +19,8 @@
   },
   "engines": {
     "node": ">=4.3"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
   }
 }

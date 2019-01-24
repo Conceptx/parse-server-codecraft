@@ -2,6 +2,7 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 // var S3Adapter = require('parse-server').S3Adapter;
 var path = require('path');
+var cors = require('cors');
 
 var databaseUri =
   'mongodb://letthemtrust:lttadmin19@ds159574.mlab.com:59574/ltt';
@@ -23,6 +24,9 @@ var api = new ParseServer({
 });
 
 var app = express();
+
+// Cross-Origin Middlware
+app.use(cors());
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
