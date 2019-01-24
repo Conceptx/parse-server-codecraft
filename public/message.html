@@ -403,7 +403,7 @@
             class="col-12 col-md-8 col-lg-7 col-md-5 text-center"
             style="z-index: 10000;"
           >
-            <form action="" method="POST">
+            <form id="contact-form" method="POST">
               <h2>Please leave a message, we always call back</h2>
               <div
                 class="fdb-box text-left"
@@ -481,7 +481,7 @@
         cache: false,
         type:'POST',
         url: '/sendMessage',
-        data: $('#donation-form').serialize(),
+        data: $('#contact-form').serialize(),
         datatype: 'json',
         success: response => {
           swal("Done !", "Your done has been sent", "success");
