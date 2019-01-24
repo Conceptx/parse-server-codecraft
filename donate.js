@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
         const paynow = new Paynow(
           `${process.env.PAYNOWID}`,
           `${process.env.PAYNOWKEY})`,
-          '',
+          'https://parse-server-me.herokuapp.com/',
           'https://parse-server-me.herokuapp.com/'
         );
         const payment = paynow.createPayment(req.body.purpose, req.body.email);
