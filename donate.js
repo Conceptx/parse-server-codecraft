@@ -15,6 +15,7 @@ router.post('/', (req, res) => {
       //   console.log(response.body.error);
       //   return;
       // }
+      console.log('Response: ' + body);
       if (req.body.paymentMethod === 'paynow') {
         const paynow = new Paynow(
           `${process.env.PAYNOWID}`,
@@ -22,11 +23,14 @@ router.post('/', (req, res) => {
           'https://parse-server-me.herokuapp.com/',
           'https://parse-server-me.herokuapp.com/'
         );
+        console.log('Paynow: ' + paynow);
         const payment = paynow.createPayment(req.body.purpose, req.body.email);
         payment.add('FUNDS', req.body.amount);
+        console.log('Payment: ' + payment);
         const init = paynow.send(payment);
+        console.log('Init:' + init);
         const link = init.success ? init.redirectUrl : { success: false };
-        console.log(link);
+        console.log('Link :' + link);
         return res.redirect(link);
       } else if (req.body.paymentMethod === 'paypal') {
         return res.json({ success: true });
