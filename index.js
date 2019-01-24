@@ -30,6 +30,7 @@ app.use(cors());
 
 app.use(
   cors({
+    'access-control-allow-origin': '*',
     origin: 'https://letthemtrust.herokuapp.com'
   })
 );
