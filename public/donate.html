@@ -543,7 +543,7 @@
             class="col-12 col-md-6 col-lg-6 col-xl-5"
             style="z-index: 10000;"
           >
-            <form id="donation-form">
+            <form id="donation-form" action="/completeDonation" method="POST">
               <div class="fdb-box" style="border-top: 10px solid orange;">
                 <div class="row">
                   <div class="col mt-4">
@@ -679,20 +679,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="javascript">
-      $.ajax({
-        cache: false,
-        type:'POST',
-        url: '/completeDonation',
-        data: $('#donation-form').serialize(),
-        datatype: 'json',
-        success: response => {
-          swal("Done !", "Your done has been sent", "success");
-        },
-        error: error => {
-          console.log(error);
-        }
-      });
-    </script>
   </body>
 </html>

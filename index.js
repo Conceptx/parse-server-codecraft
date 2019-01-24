@@ -1,9 +1,9 @@
 const express = require('express');
 const ParseServer = require('parse-server').ParseServer;
 const path = require('path');
-const donate = require('./src/donate');
-const login = require('./src/login');
-const message = require('./src/message');
+const donate = require('./donate');
+const login = require('./login');
+const message = require('./message');
 
 const api = new ParseServer({
   databaseURI:

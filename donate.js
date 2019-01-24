@@ -5,7 +5,7 @@ const Paynow = require('paynow');
 
 router.post('/', (req, res) => {
   request
-    .post('parse/classes/donations')
+    .post('https://parse-server-me.herokuapp.com/parse/classes/donations')
     .set('Content-Type', 'application/json')
     .set('X-Parse-Application-Id', `${process.env.APP_ID}`)
     .type('json')
