@@ -3,6 +3,7 @@ const router = express.Router();
 const request = require('superagent');
 const Paynow = require('paynow');
 
+console.log(process.env.PAYNOWID);
 router.post('/', (req, res) => {
   const { name, email, purpose, amount, paymentMethod } = req.body;
   request
