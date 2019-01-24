@@ -3,7 +3,6 @@ const router = express.Router();
 const request = require('superagent');
 const Paynow = require('paynow');
 
-console.log(process.env.PAYNOWID);
 router.post('/', (req, res) => {
   const { name, email, purpose, amount, paymentMethod } = req.body;
   request
@@ -17,8 +16,10 @@ router.post('/', (req, res) => {
         let paynow = new Paynow(
           `${process.env.PAYNOWID}`,
           `${process.env.PAYNOWKEY})`,
-          'https://parse-server-me.herokuapp.com/'
+          'https://parse-server-me.herokuapp.com/',
+          ''
         );
+        console.log(process.env.PAYNOWID);
         let payment = paynow.createPayment(purpose, '');
         payment.add('FUNDS', amount);
 
