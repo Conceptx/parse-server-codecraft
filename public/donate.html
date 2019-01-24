@@ -682,6 +682,7 @@
     <script type="javascript">
       $.ajax({
         cache: false,
+        type:'POST',
         url: '/completeDonation',
         data: $('#donation-form').serialize(),
         datatype: 'json',
