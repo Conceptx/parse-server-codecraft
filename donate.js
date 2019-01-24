@@ -26,6 +26,7 @@ router.post('/', (req, res) => {
         payment.add('FUNDS', req.body.amount);
         const init = paynow.send(payment);
         const link = init.success ? init.redirectUrl : { success: false };
+        console.log(link);
         return res.redirect(link);
       } else if (req.body.paymentMethod === 'paypal') {
         return res.json({ success: true });
