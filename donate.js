@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
     .set('X-Parse-Application-Id', `${process.env.APP_ID}`)
     .type('json')
     .send(req.body)
-    .then(response => {
+    .then(async () => {
       // if (response.body.code) {
       //   console.log(response.body.error);
       //   return;
@@ -24,10 +24,13 @@ router.post('/', (req, res) => {
           'https://parse-server-me.herokuapp.com/'
         );
         console.log('Paynow: ' + paynow);
-        const payment = paynow.createPayment(req.body.purpose, req.body.email);
+        const payment = await paynow.createPayment(
+          req.body.purpose,
+          req.body.email
+        );
         payment.add('FUNDS', req.body.amount);
         console.log('Payment: ' + payment);
-        const init = paynow.send(payment);
+        const init = await paynow.send(payment);
         console.log('Init:' + init);
         const link = init.success ? init.redirectUrl : { success: false };
         console.log('Link :' + link);
