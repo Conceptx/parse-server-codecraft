@@ -12,7 +12,11 @@
     "express": "~4.11.x",
     "kerberos": "~0.0.x",
     "parse": "~1.8.0",
-    "parse-server": "~2.2.12"
+    "parse-server": "~2.2.12",
+    "paynow": "^1.0.3",
+    "paypal": "^1.0.1",
+    "superagent": "^4.1.0",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "node index.js"

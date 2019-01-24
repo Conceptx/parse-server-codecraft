@@ -1,51 +1,61 @@
-var express = require('express');
-var ParseServer = require('parse-server').ParseServer;
-// var S3Adapter = require('parse-server').S3Adapter;
-var path = require('path');
-var cors = require('cors');
+const express = require('express');
+const ParseServer = require('parse-server').ParseServer;
+const path = require('path');
+const donate = require('./src/donate');
+const login = require('./src/login');
+const message = require('./src/message');
 
-var databaseUri =
-  'mongodb://letthemtrust:lttadmin19@ds159574.mlab.com:59574/ltt';
-
-if (!databaseUri) {
-  console.log('DATABASE_URI not specified, falling back to localhost.');
-}
-
-var api = new ParseServer({
-  //**** General Settings ****//
-
-  databaseURI: databaseUri,
+const api = new ParseServer({
+  databaseURI:
+    process.env.DATABASE_URI ||
+    'mongodb://letthemtrust:lttadmin19@ds159574.mlab.com:59574/ltt',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  serverURL: process.env.SERVER_URL,
-  //**** Security Settings ****//
-  // allowClientClassCreation: process.env.CLIENT_CLASS_CREATION || false,
-  appId: 'parse-ltt-app-ID',
-  masterKey: 'parse-ltt-master-KEY'
+  serverURL:
+    process.env.SERVER_URL || 'https://parse-server-me.herokuapp.com/parse',
+  appId: process.env.APP_ID || 'parse-ltt-app-ID',
+  masterKey: process.env.MASTER_KEY || 'parse-ltt-master-KEY'
 });
 
-var app = express();
-
-// Cross-Origin Middlware
-
-app.use(
-  cors({
-    mode: 'no-cors'
-  })
-);
+const app = express();
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
 
 // Serve the Parse API on the /parse URL prefix
-var mountPath = process.env.PARSE_MOUNT || '/parse';
+const mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
-app.get('/test', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/test.html'));
+// Transactional HTTP routes
+app.use('/completeDonation', donate);
+app.use('/completeLogin', login);
+app.use('/sendMessage', message);
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-var port = process.env.PORT || 1337;
-var httpServer = require('http').createServer(app);
+app.get('/contact', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/contact.html'));
+});
+
+app.get('/contact/dropMessage', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/message.html'));
+});
+
+app.get('/about-us', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/about.html'));
+});
+
+app.get('/donate', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/donate.html'));
+});
+
+app.get('/login', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/login.html'));
+});
+
+const port = process.env.PORT || 1337;
+const httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
   console.log('parse-server-example running on port ' + port + '.');
 });
