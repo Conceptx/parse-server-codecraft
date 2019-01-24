@@ -13,12 +13,12 @@ router.post('/', (req, res) => {
     .send(req.body)
     .then(async resp => {
       if (paymentMethod === 'paynow') {
-        const paynow = new Paynow(
+        let paynow = new Paynow(
           `${process.env.PAYNOWID}`,
           `${process.env.PAYNOWKEY})`,
           'https://parse-server-me.herokuapp.com/'
         );
-        const payment = paynow.createPayment(purpose, '');
+        let payment = paynow.createPayment(purpose, '');
         payment.add('FUNDS', amount);
 
         paynow.send(payment).then(ress => {
