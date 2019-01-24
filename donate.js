@@ -17,25 +17,29 @@ router.post('/', (req, res) => {
     .set('X-Parse-Application-Id', `${process.env.APP_ID}`)
     .type('json')
     .send(req.body)
-    .then(async response => {
+    .then(async resp => {
       // if (response.body.code) {
       //   console.log(response.body.error);
       //   return;
       // }
-      console.log('Response: ' + response.body);
+      console.log('Response: ' + resp.body);
       if (req.body.paymentMethod === 'paynow') {
         console.log('Paynow: ' + paynow);
-        const payment = await paynow.createPayment(
-          req.body.purpose,
-          req.body.email
-        );
+        const payment = paynow.createPayment(req.body.purpose);
+
         payment.add('FUNDS', req.body.amount);
         console.log('Payment: ' + payment);
-        const init = await paynow.send(payment);
-        console.log('Init:' + init);
-        const link = init.success ? init.redirectUrl : { success: false };
-        console.log('Link :' + link);
-        return res.redirect(link);
+
+        paynow.send(payment).then(ress => {
+          if (ress.success) {
+            // Get the link to redirect the user to, then use it as you see fit
+            let link = ress.redirectUrl;
+            console.log(link);
+            return res.redirect(link);
+          } else {
+            return res.json({ success: false });
+          }
+        });
       } else if (req.body.paymentMethod === 'paypal') {
         return res.json({ success: true });
       }
