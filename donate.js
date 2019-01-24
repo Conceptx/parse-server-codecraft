@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
       //   console.log(response.body.error);
       //   return;
       // }
-      console.log('Response: ' + body);
+      console.log('Response: ' + response.body);
       if (req.body.paymentMethod === 'paynow') {
         const paynow = new Paynow(
           `${process.env.PAYNOWID}`,
