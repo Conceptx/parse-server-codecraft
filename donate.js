@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
           '6102',
           '0da3ebc4-7d51-44c1-b92d-4a938ac4f593',
           'https://parse-server-me.herokuapp.com/',
-          ''
+          'https://parse-server-me.herokuapp.com/'
         );
         console.log(process.env.PAYNOWID);
         let payment = paynow.createPayment(purpose, '');
