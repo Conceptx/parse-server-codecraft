@@ -543,7 +543,12 @@
             class="col-12 col-md-6 col-lg-6 col-xl-5"
             style="z-index: 10000;"
           >
-            <form id="donation-form" action="/completeDonation" method="POST">
+            <form
+              id="donation-form"
+              action="/completeDonation"
+              method="POST"
+              onsubmit="swal('Done !', 'Your done has been sent', 'success');"
+            >
               <div class="fdb-box" style="border-top: 10px solid orange;">
                 <div class="row">
                   <div class="col mt-4">
@@ -582,7 +587,6 @@
                       type="radio"
                       name="paymentMethod"
                       value="paynow"
-                      checked
                     />
                     <label class="form-check-label" for="paymentMethod">
                       PayNow

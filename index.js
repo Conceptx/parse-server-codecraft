@@ -4,6 +4,7 @@ const path = require('path');
 const donate = require('./donate');
 const login = require('./login');
 const message = require('./message');
+const bodyParser = require('body-parser');
 
 const api = new ParseServer({
   databaseURI:
@@ -19,6 +20,11 @@ const app = express();
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
+
+// Middleware
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve the Parse API on the /parse URL prefix
 const mountPath = process.env.PARSE_MOUNT || '/parse';

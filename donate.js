@@ -11,10 +11,10 @@ router.post('/', (req, res) => {
     .type('json')
     .send(req.body)
     .then(async response => {
-      if (response.body.code) {
-        console.log(response.body.error);
-        return;
-      }
+      // if (response.body.code) {
+      //   console.log(response.body.error);
+      //   return;
+      // }
       if (req.body.paymentMethod === 'paynow') {
         const paynow = await new Paynow(
           `${process.env.PAYNOWID}`,
@@ -28,12 +28,10 @@ router.post('/', (req, res) => {
         );
         payment.add('FUNDS', req.body.amount);
         const init = await paynow.send(payment);
-        const link = init.success
-          ? init.redirectUrl
-          : res.json({ success: false });
+        const link = init.success ? init.redirectUrl : { success: false };
         return link;
       } else if (req.body.paymentMethod === 'paypal') {
-        // paypal checkout process
+        return res.json({ success: true });
       }
     })
     .catch(error => console.log(error));
