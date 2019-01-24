@@ -26,7 +26,6 @@ var api = new ParseServer({
 var app = express();
 
 // Cross-Origin Middlware
-app.use(cors());
 
 app.use(
   cors({
