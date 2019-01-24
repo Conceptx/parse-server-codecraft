@@ -29,8 +29,7 @@ var app = express();
 
 app.use(
   cors({
-    'access-control-allow-origin': '*',
-    origin: 'https://letthemtrust.herokuapp.com'
+    mode: 'no-cors'
   })
 );
 
