@@ -403,7 +403,7 @@
             class="col-12 col-md-8 col-lg-7 col-md-5 text-center"
             style="z-index: 10000;"
           >
-            <form id="contact-form" method="POST">
+            <form id="contact-form" action="/sendMessage" method="POST">
               <h2>Please leave a message, we always call back</h2>
               <div
                 class="fdb-box text-left"
@@ -476,20 +476,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="javascript">
-      $.ajax({
-        cache: false,
-        type:'POST',
-        url: '/sendMessage',
-        data: $('#contact-form').serialize(),
-        datatype: 'json',
-        success: response => {
-          swal("Done !", "Your done has been sent", "success");
-        },
-        error: error => {
-          console.log(error);
-        }
-      });
-    </script>
   </body>
 </html>
