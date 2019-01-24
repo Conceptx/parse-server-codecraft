@@ -28,6 +28,12 @@ var app = express();
 // Cross-Origin Middlware
 app.use(cors());
 
+app.use(
+  cors({
+    origin: 'https://letthemtrust.herokuapp.com'
+  })
+);
+
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
 
