@@ -14,8 +14,8 @@ router.post('/', (req, res) => {
     .then(async resp => {
       if (paymentMethod === 'paynow') {
         let paynow = new Paynow(
-          `${process.env.PAYNOWID}`,
-          `${process.env.PAYNOWKEY})`,
+          '6102',
+          '0da3ebc4-7d51-44c1-b92d-4a938ac4f593',
           'https://parse-server-me.herokuapp.com/',
           ''
         );
