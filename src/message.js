@@ -7,10 +7,7 @@ router.post('/', (req, res) => {
   request
     .post('https://api.sendgrid.com/v3/mail/send')
     .set('content-type', 'application/json')
-    .set(
-      'authorization',
-      'Bearer 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'
-    )
+    .set('authorization', `Bearer ${process.env.SENDGRID}`)
     .type('json')
     .send({
       email,

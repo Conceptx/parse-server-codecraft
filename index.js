@@ -10,10 +10,9 @@ const api = new ParseServer({
     process.env.DATABASE_URI ||
     'mongodb://letthemtrust:lttadmin19@ds159574.mlab.com:59574/ltt',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  serverURL:
-    process.env.SERVER_URL || 'https://parse-server-me.herokuapp.com/parse',
-  appId: process.env.APP_ID || 'parse-ltt-app-ID',
-  masterKey: process.env.MASTER_KEY || 'parse-ltt-master-KEY'
+  serverURL: `${process.env.SERVER_URL}`,
+  appId: `${process.env.APP_ID}`,
+  masterKey: `${process.env.MASTER_KEY}`
 });
 
 const app = express();
