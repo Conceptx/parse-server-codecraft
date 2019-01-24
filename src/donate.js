@@ -9,13 +9,12 @@ router.post('/', (req, res) => {
     .set('Content-Type', 'application/json')
     .set('X-Parse-Application-Id', `${process.env.APP_ID}`)
     .type('json')
-    .send({
-      to: [req.body.email],
-      dynamic_template_data: req.body,
-      from: 'theophilusokoye@outlook.com',
-      template_id: process.env.INQUIRY_TEMPLATE_ID
-    })
+    .send(req.body)
     .then(async response => {
+      if (response.body.code) {
+        console.log(response.body.error);
+        return;
+      }
       if (req.body.paymentMethod === 'paynow') {
         const paynow = await new Paynow(
           `${process.env.PAYNOWID}`,

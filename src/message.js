@@ -10,8 +10,25 @@ router.post('/', (req, res) => {
     .set('authorization', `Bearer ${process.env.SENDGRID}`)
     .type('json')
     .send({
-      email,
-      message
+      personalizations: [
+        {
+          to: [
+            {
+              email: email,
+              name: name
+            }
+          ],
+          dynamic_template_data: {
+            email: email,
+            message: message
+          }
+        }
+      ],
+      from: {
+        email: 'theophilusokoye@outlook.com',
+        name: 'Let Them Trust Inquiry'
+      },
+      template_id: `${process.env.INQUIRY_TEMPLATE_ID}`
     })
     .then(response => res.json({ success: true }))
     .catch(error => console.log(error));
