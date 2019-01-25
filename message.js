@@ -14,8 +14,8 @@ router.post('/', (req, res) => {
         {
           to: [
             {
-              email: email,
-              name: name
+              email: '13loc4apis@gmail.com',
+              name: 'Let Them Trust Inquiry'
             }
           ],
           dynamic_template_data: {
