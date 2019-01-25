@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   request
     .post('https://parse-server-me.herokuapp.com/parse/classes/donations')
     .set('Content-Type', 'application/json')
-    .set('X-Parse-Application-Id', `${process.env.APP_ID}`)
+    .set('X-Parse-Application-Id', 'parse-ltt-app-ID')
     .type('json')
     .send(req.body)
     .then(async resp => {
@@ -19,7 +19,6 @@ router.post('/', (req, res) => {
           'https://parse-server-me.herokuapp.com/',
           'https://parse-server-me.herokuapp.com/'
         );
-        console.log(process.env.PAYNOWID);
         let payment = paynow.createPayment(purpose, '');
         payment.add('FUNDS', amount);
 

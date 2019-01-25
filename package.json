@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "express": "~4.11.x",
     "googleapis": "^27.0.0",
     "kerberos": "~0.0.x",
