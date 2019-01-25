@@ -6,7 +6,7 @@ const Paynow = require('paynow');
 router.post('/', (req, res) => {
   const { name, email, purpose, amount, paymentMethod } = req.body;
   request
-    .post('https://parse-server-me.herokuapp.com/parse/classes/donations')
+    .post('/parse/classes/donations')
     .set('Content-Type', 'application/json')
     .set('X-Parse-Application-Id', 'parse-ltt-app-ID')
     .type('json')
@@ -16,8 +16,8 @@ router.post('/', (req, res) => {
         let paynow = new Paynow(
           '6102',
           '0da3ebc4-7d51-44c1-b92d-4a938ac4f593',
-          'https://parse-server-me.herokuapp.com/',
-          'https://parse-server-me.herokuapp.com/'
+          'https://lttzw.herokuapp.com/',
+          'https://lttzw.herokuapp.com/'
         );
         let payment = paynow.createPayment(purpose, '');
         payment.add('FUNDS', amount);
