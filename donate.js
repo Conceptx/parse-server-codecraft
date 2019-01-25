@@ -6,7 +6,7 @@ const Paynow = require('paynow');
 router.post('/', (req, res) => {
   const { name, email, purpose, amount, paymentMethod } = req.body;
   request
-    .post('/parse/classes/donations')
+    .post('https://lttzw.herokuapp.com/parse/classes/donations')
     .set('Content-Type', 'application/json')
     .set('X-Parse-Application-Id', 'parse-ltt-app-ID')
     .type('json')

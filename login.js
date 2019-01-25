@@ -5,8 +5,8 @@ const request = require('superagent');
 router.post('/', (req, res) => {
   const { email, password } = req.body;
   request
-    .get('/parse/login')
-    .set('X-Parse-Application-Id', `${process.env.APP_ID}`)
+    .get('https://lttzw.herokuapp.com/parse/login')
+    .set('X-Parse-Application-Id', 'parse-ltt-app-ID')
     .set('X-Parse-Revocable-Session', `1`)
     .type('form')
     .send({ email })
