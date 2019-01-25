@@ -8,9 +8,7 @@ const message = require('./message');
 const events = require('./events');
 
 const api = new ParseServer({
-  databaseURI:
-    process.env.DATABASE_URI ||
-    'mongodb://letthemtrust:lttadmin19@ds159574.mlab.com:59574/ltt',
+  databaseURI: `${process.env.DATABASE_URI}`,
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   serverURL: `${process.env.SERVER_URL}`,
   appId: `${process.env.APP_ID}`,
