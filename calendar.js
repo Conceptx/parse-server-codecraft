@@ -1,11 +1,1 @@
-const express = require('express');
-const router = express.Router();
-const { listEvents } = require('./events');
-
-router.get('/', (req, res) => {
-  listEvents().then(events => console.log(events));
-});
-
-router.get('/:query', (req, res) => {});
-
-module.exports = router;
+{"data":[{"kind":"calendar#event","etag":"\"3096736954394000\"","id":"4on1jpq9msc3245qkl6j1tpin7","status":"confirmed","htmlLink":"https://www.google.com/calendar/event?eid=NG9uMWpwcTltc2MzMjQ1cWtsNmoxdHBpbjcgMTNsb2M0YXBpc0Bt","created":"2019-01-24T22:21:17.000Z","updated":"2019-01-24T22:21:17.197Z","summary":"HIT Open","location":"Harare Institute of Technology (HIT), Lawley Ave, Harare, Zimbabwe","creator":{"email":"13loc4apis@gmail.com","self":true},"organizer":{"email":"13loc4apis@gmail.com","self":true},"start":{"date":"2019-02-11"},"end":{"date":"2019-02-12"},"transparency":"transparent","visibility":"public","iCalUID":"4on1jpq9msc3245qkl6j1tpin7@google.com","sequence":0,"extendedProperties":{"private":{"everyoneDeclinedDismissed":"-1"}},"reminders":{"useDefault":true}}]}

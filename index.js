@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const donate = require('./donate');
 const login = require('./login');
 const message = require('./message');
-const calendar = require('./calendar');
+const events = require('./events');
 
 const api = new ParseServer({
   databaseURI:
@@ -35,7 +35,7 @@ app.use(mountPath, api);
 app.use('/completeDonation', donate);
 app.use('/completeLogin', login);
 app.use('/sendMessage', message);
-app.use('/events', calendar);
+app.use('/upcomingEvents', events);
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'));
@@ -59,6 +59,10 @@ app.get('/donate', function(req, res) {
 
 app.get('/login', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/login.html'));
+});
+
+app.get('/events', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/events.html'));
 });
 
 const port = process.env.PORT || 1337;

@@ -386,11 +386,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
     />
-    <!--     
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/css/froala_editor.pkgd.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/css/froala_style.min.css"
-    /> -->
+    />
   </head>
   <body>
     <header data-block-type="headers" data-id="3" class="">
@@ -424,20 +427,12 @@
             id="navbarNav4"
           >
             <ul class="navbar-nav justify-content-center">
-                <li class="nav-item active">
-                    <a
-                      class="nav-link"
-                      href="/"
-                      style="outline: none; display: inline-block;"
-                      >Home</span></a
-                    >
-                  </li>
               <li class="nav-item active">
                 <a
                   class="nav-link"
-                  href="#services"
+                  href="/services"
                   style="outline: none; display: inline-block;"
-                  >Services</span></a
+                  >Services <span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
@@ -512,399 +507,42 @@
                 ><!-- <i class="fab fa-twitter"></i> --></a
               >
             </li>
-            <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://www.instagram.com/letthemtrust"
-                  style="outline: none; display: inline-block;"
-                  >
-                  <i class="fab fa-instagram"></i>
-                  </a
-                >
-              </li>
-              <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    href="https://www.youtube.com/"
-                    style="outline: none; display: inline-block;"
-                    >
-                    <i class="fab fa-youtube"></i>
-                    </a
-                  >
-                </li>
           </ul>
         </nav>
       </div>
     </header>
-    <section
-      class="fdb-block fp-active"
-      data-block-type="call_to_action"
-      data-id="5"
-      style="background-image: url(/public/assets/images/4262498.jpg);"
-    >
-      <div class="container">
-        <div class="row align-items-center text-left text-light">
-          <div class="col-12 col-md-12" style="z-index: 10000;">
-            <h1
-              class=""
-              style="font-weight: bolder; color : rgb(255, 255, 255)"
-            >
-              <strong>
-                Help Us In Grooming Young People and Showcasing Their Talent
-              </strong>
-            </h1>
-            <p
-              class="fa-2x"
-              style="font-weight: bolder; color : rgb(255, 255, 255)"
-            >
-              through creative, educational, cultural initiatives
-            </p>
-          </div>
-          <div
-            class="col-12 col-md-12 ml-auto text-left text-md-left"
-            style="z-index: 10000;"
+    <section class="fdb-block py-0">
+      <div
+        class="container py-5 my-5 bg-r"
+        style="background-image: url(https://cdn.jsdelivr.net/gh/froala/design-blocks@2.0.1/dist/imgs//shapes/9.svg);"
+        id="events"
+      >
+        <h2 class="text-success">These are some of our upcoming events.</h2>
+        <p class="lead">
+          If you would like to participate or sponsor, click the
+          <i>"I want to attend "</i>button.
+        </p>
+        <p>
+          <button
+            type="button"
+            id="view-events"
+            class="btn btn-outline-success"
           >
-            <p>
-              <a
-                class="btn btn-lg btn-warning mt-4"
-                href="/donate"
-                style="font-weight: bold"
-                >Make a Donation</a
-              >&nbsp;<a
-                class="btn btn-lg btn-light mt-4"
-                href="/contact/dropMessage"
-                style="font-weight: lighter"
-                >Become a Sponsor</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="fdb-block" data-block-type="contents" data-id="7">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div
-            class="col-12 col-lg-8 col-xl-6 text-center"
-            style="z-index: 10000;"
-          >
-            <p>
-              <img
-                alt="image"
-                width="200"
-                src="/public/assets/images/logo.png"
-              />
-            </p>
-            <h1>Let Them Trust</h1>
-            <p class="lead">
-              Let Them Trust is a child-oriented creative, educational and
-              cultural initiative that aims to create a platform for young
-              people to groom and showcase their artistic talent.
-            </p>
-            <p class="h3 mt-5">
-              <a class="btn btn-lg btn-outline-warning" href="/about-us"
-                >Learn More</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="fdb-block" data-block-type="contents" data-id="6">
-      <div class="container">
-        <div class="row text-center align-items-center">
-          <div class="col-6 col-md-4" style="z-index: 10000;">
-            <p>
-              <img
-                alt="image"
-                class="img-fluid"
-                src="/public/assets/images/image8.JPG"
-              />
-            </p>
-          </div>
-
-          <div class="col-6 col-md-2" style="z-index: 10000;">
-            <div class="row">
-              <div class="col-12">
-                <img
-                  alt="image"
-                  class="img-fluid"
-                  src="/public/assets/images/image9.JPG"
-                />
-              </div>
-            </div>
-            <div class="row mt-4">
-              <div class="col-12">
-                <img
-                  alt="image"
-                  class="img-fluid"
-                  src="/public/assets/images/image7.JPG"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-12 col-md-6 col-lg-5 ml-auto pt-5 pt-md-0"
-            style="z-index: 10000;"
-          >
-            <p>
-              <img
-                alt="image"
-                class="fdb-icon"
-                src="/public/assets/images/shutter.svg"
-              />
-            </p>
-            <h1>Gallery</h1>
-            <p class="lead">
-              We keep a collection of some of our most memorable events.
-            </p>
-            <p class="h3 mt-5">
-              <a class="btn btn-lg btn-outline-success" href="/gallery"
-                >View Pictures</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="fdb-block" data-block-type="contents" data-id="8">
-      <div class="container">
-        <div class="row text-center align-items-center">
-          <div
-            class="col-10 col-sm-6 m-auto col-md-4 pb-4 pb-md-0"
-            style="z-index: 10000;"
-          >
-            <p>
-              <img
-                alt="image"
-                class="img-fluid rounded-0"
-                src="/public/assets/images/image24.png"
-                style="filter:grayscale(75%)"
-              />
-            </p>
-          </div>
-
-          <div class="col-12 ml-auto col-md-6 col-lg-5" style="z-index: 10000;">
-            <h1>Events</h1>
-            <p class="lead">
-              Let Them Trust hosts a couple of events each year including
-              talent, workshops, mentorship, cultural exchange, career pathway
-              programmes.
-            </p>
-            <p>
-              <a
-                class="btn btn-lg btn-outline-warning mt-4 mb-5 mb-md-0"
-                href="/events"
-                >See Upcoming Events</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="fdb-block" data-block-type="features" data-id="9" id="services">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-12 text-center" style="z-index: 10000;">
-            <h1>Services</h1>
-          </div>
-        </div>
-
-        <div class="row text-left align-items-center pt-5 pb-md-5">
-          <div class="col-4 col-md-5" style="z-index: 10000;">
-            <p>
-              <img
-                alt="image"
-                class="img-fluid"
-                src="https://cdn.jsdelivr.net/gh/froala/design-blocks@2.0.1/dist/imgs//draws/developer.svg"
-              />
-            </p>
-          </div>
-
-          <div class="col-12 col-md-5 m-md-auto" style="z-index: 10000;">
-            <h2><strong>Workshops</strong></h2>
-            <p class="lead">
-              Training the youth in Arts Business Management to increase their
-              understanding of the business elements that will affect them in
-              their arts industries.
-            </p>
-          </div>
-        </div>
-
-        <div class="row text-left align-items-center pt-5 pb-md-5">
-          <div
-            class="col-4 col-md-5 m-md-auto order-md-5"
-            style="z-index: 10000;"
-          >
-            <p>
-              <img
-                alt="image"
-                class="img-fluid"
-                src="https://cdn.jsdelivr.net/gh/froala/design-blocks@2.0.1/dist/imgs//draws/celebration.svg"
-              />
-            </p>
-          </div>
-
-          <div class="col-12 col-md-5" style="z-index: 10000;">
-            <h2><strong>Cultural Exchange & Mentorship</strong></h2>
-            <p class="lead">
-              To foster a transition of a select-number of participants from
-              schools into professional-level opportunities
-            </p>
-          </div>
-        </div>
-
-        <div class="row text-left align-items-center pt-5">
-          <div class="col-4 col-md-5" style="z-index: 10000;">
-            <p>
-              <img
-                alt="image"
-                class="img-fluid"
-                src="https://cdn.jsdelivr.net/gh/froala/design-blocks@2.0.1/dist/imgs//draws/design-community.svg"
-              />
-            </p>
-          </div>
-
-          <div class="col-12 col-md-5 m-md-auto" style="z-index: 10000;">
-            <h2><strong>Nurture Talent</strong></h2>
-            <p class="lead">
-              Provide a sustainable platform for upcoming young artists to
-              develop and showcase their artistic talent.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="fdb-block" data-block-type="testimonials" data-id="11">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12" style="z-index: 10000;">
-            <h2><strong>Some of our sponsors</strong></h2>
-            <div class="mt-5 justify-content-center">
-              <img
-                alt="image"
-                height="80"
-                class="ml-3 mr-3 mb-2 mt-2"
-                src="/public/assets/images/zifm.png"
-                style="filter: grayscale(100%)"
-              />
-              <img
-                alt="image"
-                height="80"
-                class="ml-3 mr-3 mb-2 mt-2"
-                src="/public/assets/images/econet.png"
-                style="filter: grayscale(100%)"
-              />
-              <img
-                alt="image"
-                height="80"
-                class="ml-3 mr-3 mb-2 mt-2"
-                src="/public/assets/images/sk.jpg"
-                style="filter: grayscale(100%)"
-              />
-              <img
-                alt="image"
-                height="80"
-                class="ml-3 mr-3 mb-2 mt-2"
-                src="/public/assets/images/dandemutande.png"
-                style="filter: grayscale(100%)"
-              />
-              <img
-                alt="image"
-                height="80"
-                class="ml-3 mr-3 mb-2 mt-2"
-                src="/public/assets/images/zimlive.jpeg"
-                style="filter: grayscale(100%)"
-              />
-            </div>
-          </div>
-        </div>
+            View Upcoming Events
+          </button>
+        </p>
       </div>
     </section>
     <footer
-      class="fdb-block footer-large bg-dark"
+      class="fdb-block footer-small"
       data-block-type="footers"
-      data-id="12"
+      data-id="3"
     >
       <div class="container">
-        <div class="row align-items-top text-center mb-5">
-          <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-sm-center">
-            <h3><strong>Quick Access</strong></h3>
-            <nav class="nav flex-column">
-              <a
-                class="nav-link active"
-                href="/"
-                style="outline: none; display: inline-block;"
-                >Home</a
-              >
-              <a
-                class="nav-link active"
-                href="/services"
-                style="outline: none; display: inline-block;"
-                >Services</a
-              >
-              <a
-                class="nav-link"
-                href="/gallery"
-                style="outline: none; display: inline-block;"
-                >Gallery</a
-              >
-              <a
-                class="nav-link"
-                href="/events"
-                style="outline: none; display: inline-block;"
-                >Events</a
-              >
-              <a
-                class="nav-link"
-                href="/about-us"
-                style="outline: none; display: inline-block;"
-                >About Us</a
-              >
-              <a
-                class="nav-link"
-                href="/contact"
-                style="outline: none; display: inline-block;"
-                >Contact Us</a
-              >
-            </nav>
+        <div class="row justify-content-center text-center">
+          <div class="col">
+            <p class="text-success">Let Them Trust &copy; 2019</p>
           </div>
-          <div
-            class="col-12 col-md-6 col-lg-6 text-md-left"
-            style="z-index: 10000;"
-          >
-            <h3><strong>About Us</strong></h3>
-            <p>
-              Let Them Trust is a child-oriented creative, educational and
-              cultural initiative that aims to create a platform for young
-              people to groom and showcase their artistic talent.
-            </p>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div
-            class="col text-center fr-box"
-            role="application"
-            style="z-index: 10000;"
-          >
-            <div class="fr-wrapper" dir="auto">
-              <div
-                class="fr-element fr-view"
-                dir="auto"
-                aria-disabled="false"
-                spellcheck="true"
-              >
-                <p>
-                  <strong class="text-warning"
-                    >Let Them Trust &copy; 2019.</strong
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -912,5 +550,36 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/js/froala_editor.pkgd.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+    <script>
+      $('#view-events').click(() => {
+        fetch('/upcomingEvents').then(async res => {
+            const string = await res.text();
+            const data = JSON.parse(string);
+            console.log(data);
+            $.each(data.data, (key, value) => {
+              let { summary, location, description, start, end} = value;
+
+              description = description !== undefined ? description : '';
+              const startTime = start.date !== undefined ? start.date : start.dateTime;
+              const endTime = end.date !== undefined ? end.date : end.dateTime;
+              $('#events').append(
+                '<div class="row text-left py-5"><div class="col-12 col-md-8 col-lg-6 ml-sm-auto"><div class="fdb-box" style="border-top: 10px solid #28a745"><div class="row justify-content-start text-left"><h2 id="event-title">' +
+                  summary +
+                  '</h2><p style="display:inline-block">' +
+                  description +
+                  '</p><p style="display:inline-block">' +
+                  location +
+                  '</p><p style="display:inline-block">Starting : ' +
+                  startTime +
+                  '</p><br><br><p style="display:inline-block">Ending : ' +
+                  endTime +
+                  '</p><br/><p class="h3 mt-5"><a href="/rsvp/event-id" class="btn btn-outline-success text-center">I want to attend !</a></p></div></div></div></div></div>'
+              );
+            });
+          })
+          .catch(error => console.log(error));
+      });
+    </script>
+    <script src="../calendar.json"></script>
   </body>
 </html>
