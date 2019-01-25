@@ -12,7 +12,7 @@ let jwtClient = new google.google.auth.JWT(
   ['https://www.googleapis.com/auth/calendar']
 );
 //authenticate request
-jwtClient.authorize(function(err, tokens) {
+jwtClient.authorize((err, tokens) => {
   if (err) {
     console.log(err);
     return;
@@ -31,21 +31,12 @@ router.get('/', (req, res) => {
       singleEvents: true,
       orderBy: 'startTime'
     },
-    function(err, response) {
+    (err, response) => {
       if (err) {
         console.log(err);
-        return;
+        return res.send({ success: false });
       } else {
-        fs.writeFileSync(
-          'calendar.js',
-          JSON.stringify({ data: response.data.items }),
-          { encoding: 'utf8', flag: 'w' },
-          err => {
-            console.log(err);
-            return res.send({ success: false });
-          }
-        );
-        res.status(200).send({ data: response.data.items });
+        return res.status(200).send({ data: response.data.items });
       }
     }
   );

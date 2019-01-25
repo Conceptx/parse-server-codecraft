@@ -555,7 +555,10 @@
         fetch('/upcomingEvents').then(async res => {
             const string = await res.text();
             const data = JSON.parse(string);
-            console.log(data);
+
+            if(data.success === false){
+              return $('#events').append(
+                '<div class="row text-left py-5"><div class="col-12 col-md-8 col-lg-6 ml-sm-auto"><div class="fdb-box" style="border-top: 10px solid #28a745"><div class="row align-items-start text-left"><h2 id="event-title">There are currently no upcoming events</h2></div></div></div></div>')}
             $.each(data.data, (key, value) => {
               let { summary, location, description, start, end} = value;
 
@@ -563,7 +566,7 @@
               const startTime = start.date !== undefined ? start.date : start.dateTime;
               const endTime = end.date !== undefined ? end.date : end.dateTime;
               $('#events').append(
-                '<div class="row text-left py-5"><div class="col-12 col-md-8 col-lg-6 ml-sm-auto"><div class="fdb-box" style="border-top: 10px solid #28a745"><div class="row justify-content-start text-left"><h2 id="event-title">' +
+                '<div class="row text-left py-5"><div class="col-12 col-md-8 col-lg-6 ml-sm-auto"><div class="fdb-box" style="border-top: 10px solid #28a745"><div class="row align-items-start text-left"><h2 id="event-title">' +
                   summary +
                   '</h2><p style="display:inline-block">' +
                   description +
@@ -573,7 +576,7 @@
                   startTime +
                   '</p><br><br><p style="display:inline-block">Ending : ' +
                   endTime +
-                  '</p><br/><p class="h3 mt-5"><a href="/rsvp/event-id" class="btn btn-outline-success text-center">I want to attend !</a></p></div></div></div></div></div>'
+                  '</p><br/><p class="h3 mt-5"><a href="/rsvp/event-id" class="btn btn-outline-success align-items-start text-left">I want to attend !</a></p></div></div></div></div></div>'
               );
             });
           })
