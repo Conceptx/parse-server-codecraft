@@ -6,9 +6,10 @@ const donate = require('./donate');
 const login = require('./login');
 const message = require('./message');
 const events = require('./events');
+const rsvp = require('./rsvp');
 
 const api = new ParseServer({
-  databaseURI: `${process.env.DATABASE_URI}`,
+  databaseURI: `${process.env.DATABASE_URI}` || '',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   serverURL: `${process.env.SERVER_URL}`,
   appId: `${process.env.APP_ID}`,
@@ -34,6 +35,7 @@ app.use('/completeDonation', donate);
 app.use('/completeLogin', login);
 app.use('/sendMessage', message);
 app.use('/upcomingEvents', events);
+app.use('/rsvp/complete', rsvp);
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'));
@@ -61,6 +63,10 @@ app.get('/login', function(req, res) {
 
 app.get('/events', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/events.html'));
+});
+
+app.get('/rsvp/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/rsvp.html'));
 });
 
 const port = process.env.PORT || 1337;

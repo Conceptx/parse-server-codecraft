@@ -550,6 +550,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/js/froala_editor.pkgd.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
       $('#view-events').click(() => {
         fetch('/upcomingEvents').then(async res => {
@@ -566,23 +567,22 @@
               const startTime = start.date !== undefined ? start.date : start.dateTime;
               const endTime = end.date !== undefined ? end.date : end.dateTime;
               $('#events').append(
-                '<div class="row text-left py-5"><div class="col-12 col-md-8 col-lg-6 ml-sm-auto"><div class="fdb-box" style="border-top: 10px solid #28a745"><div class="row align-items-start text-left"><h2 id="event-title">' +
+                '<div class="row text-left py-5"><div class="col-12 col-md-12 col-lg-6 ml-sm-auto"><div class="fdb-box" style="border-top: 10px solid #28a745"><div class="row align-items-start text-left"><h2 id="event-title">' +
                   summary +
-                  '</h2><p style="display:inline-block">' +
+                  '</h2><div class="col-12 col-md-12 m-md-auto" style="z-index: 10000;"><p>' +
                   description +
-                  '</p><p style="display:inline-block">' +
+                  '</p></div><div class="col-12 col-md-12 m-md-auto" style="z-index: 10000;"><p>' +
                   location +
-                  '</p><p style="display:inline-block">Starting : ' +
+                  '</p></div><div class="col-12 col-md-12 m-md-auto" style="z-index: 10000;"><p>Starting: ' +
                   startTime +
-                  '</p><br><br><p style="display:inline-block">Ending : ' +
+                  '</p></div><div class="col-12 col-md-12 m-md-auto" style="z-index: 10000;"><p>Ending: ' +
                   endTime +
-                  '</p><br/><p class="h3 mt-5"><a href="/rsvp/event-id" class="btn btn-outline-success align-items-start text-left">I want to attend !</a></p></div></div></div></div></div>'
+                  '</p></div><div class="col-12 col-md-12 m-md-auto" style="z-index: 10000;"><p class="h3 mt-5"><a href=`/rsvp/${summary}` class="btn btn-outline-success align-items-start text-left">I want to attend !</a></p></div></div></div></div></div></div>'
               );
             });
           })
           .catch(error => console.log(error));
       });
     </script>
-    <script src="../calendar.json"></script>
   </body>
 </html>

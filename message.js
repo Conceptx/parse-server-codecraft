@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
       },
       template_id: `${process.env.INQUIRY_TEMPLATE_ID}`
     })
-    .then(response => res.json({ success: true }))
+    .then(response)
     .catch(error => console.log(error));
 });
 

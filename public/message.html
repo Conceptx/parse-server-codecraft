@@ -403,7 +403,12 @@
             class="col-12 col-md-8 col-lg-7 col-md-5 text-center"
             style="z-index: 10000;"
           >
-            <form id="contact-form" action="/sendMessage" method="POST">
+            <form
+              id="contact-form"
+              action="/sendMessage"
+              method="POST"
+              onsubmit="swal('Sent !', 'Your message has been sent', 'success');"
+            >
               <h2>Please leave a message, we always call back</h2>
               <div
                 class="fdb-box text-left"
