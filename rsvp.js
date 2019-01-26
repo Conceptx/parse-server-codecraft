@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     .then(response =>
       response.body.code
         ? res.json({ success: false })
-        : res.json({ success: true })
+        : res.redirect('/events')
     )
     .catch(error => console.log(error));
 });

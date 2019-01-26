@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
       },
       template_id: `${process.env.INQUIRY_TEMPLATE_ID}`
     })
-    .then(response)
+    .then(response => res.redirect('/contact-us'))
     .catch(error => console.log(error));
 });
 
