@@ -561,7 +561,7 @@
               return $('#events').append(
                 '<div class="row text-left py-5"><div class="col-12 col-md-8 col-lg-6 ml-sm-auto"><div class="fdb-box" style="border-top: 10px solid #28a745"><div class="row align-items-start text-left"><h2 id="event-title">There are currently no upcoming events</h2></div></div></div></div>')}
             $.each(data.data, (key, value) => {
-              let { summary, location, description, start, end} = value;
+              let {id, summary, location, description, start, end} = value;
 
               description = description !== undefined ? description : '';
               const startTime = start.date !== undefined ? start.date : start.dateTime;
@@ -577,7 +577,7 @@
                   startTime +
                   '</p></div><div class="col-12 col-md-12 m-md-auto" style="z-index: 10000;"><p>Ending: ' +
                   endTime +
-                  '</p></div><div class="col-12 col-md-12 m-md-auto" style="z-index: 10000;"><p class="h3 mt-5"><a href=`/rsvp/${summary}` class="btn btn-outline-success align-items-start text-left">I want to attend !</a></p></div></div></div></div></div></div>'
+                  '</p></div><div class="col-12 col-md-12 m-md-auto" style="z-index: 10000;"><p class="h3 mt-5"><a href=\"rsvp/' + id + '\" class="btn btn-outline-success align-items-start text-left">I want to attend !</a></p></div></div></div></div></div></div>'
               );
             });
           })
