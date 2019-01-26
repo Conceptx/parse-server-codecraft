@@ -10,9 +10,9 @@ router.post('/', (req, res) => {
     .type('json')
     .send(req.body)
     .then(response =>
-      response.body.code === 0
-        ? res.json({ success: true })
-        : res.json({ success: false })
+      response.body.code
+        ? res.json({ success: false })
+        : res.json({ success: true })
     )
     .catch(error => console.log(error));
 });
