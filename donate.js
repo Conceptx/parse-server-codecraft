@@ -23,17 +23,13 @@ router.post('/', (req, res) => {
         payment.add('FUNDS', amount);
 
         paynow.send(payment).then(ress => {
-          console.log(ress);
           if (ress.success) {
             let link = ress.redirectUrl;
-            console.log(link);
             return res.redirect(link);
           } else {
             return res.json({ success: false });
           }
         });
-      } else if (req.body.paymentMethod === 'paypal') {
-        return res.json({ success: true });
       }
     })
     .catch(error => console.log(error));

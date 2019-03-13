@@ -9,11 +9,11 @@ const events = require('./events');
 const rsvp = require('./rsvp');
 
 const api = new ParseServer({
-  databaseURI: `${process.env.DATABASE_URI}` || '',
-  cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  serverURL: `${process.env.SERVER_URL}`,
-  appId: `${process.env.APP_ID}`,
-  masterKey: `${process.env.MASTER_KEY}`
+	databaseURI: `${process.env.DATABASE_URI}` || '',
+	cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+	serverURL: `${process.env.SERVER_URL}`,
+	appId: `${process.env.APP_ID}`,
+	masterKey: `${process.env.MASTER_KEY}`
 });
 
 const app = express();
@@ -38,41 +38,41 @@ app.use('/upcomingEvents', events);
 app.use('/rsvp/complete', rsvp);
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/index.html'));
+	res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 app.get('/contact', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/contact.html'));
+	res.sendFile(path.join(__dirname, '/public/contact.html'));
 });
 
 app.get('/contact/dropMessage', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/message.html'));
+	res.sendFile(path.join(__dirname, '/public/message.html'));
 });
 
 app.get('/about-us', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/about.html'));
+	res.sendFile(path.join(__dirname, '/public/about.html'));
 });
 
 app.get('/donate', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/donate.html'));
+	res.sendFile(path.join(__dirname, '/public/donate.html'));
 });
 
 app.get('/login', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/login.html'));
+	res.sendFile(path.join(__dirname, '/public/login.html'));
 });
 
 app.get('/events', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/events.html'));
+	res.sendFile(path.join(__dirname, '/public/events.html'));
 });
 
 app.get('/rsvp/:id', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/rsvp.html'));
+	res.sendFile(path.join(__dirname, '/public/rsvp.html'));
 });
 
 const port = process.env.PORT || 1337;
 const httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
-  console.log('parse-server-example running on port ' + port + '.');
+	console.log('parse-server-example running on port ' + port + '.');
 });
 
 // This will enable the Live Query real-time server
